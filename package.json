@@ -1,0 +1,17 @@
+{
+  "name": "cents-of-self",
+  "version": "1.0.0",
+  "description": "Cents of Self is a demo unified framework (front and back end running as part of one docker-compose network) which provides a simple CRUD interface for financial transactions.",
+  "repository": "git@github.com:codebravotech/cents-of-self.git",
+  "author": "CodeBRAVO <johnnypovolny@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "install_deps": "cd ./app && yarn && cd ../api && yarn && cd ..",
+    "dev": "docker-compose up",
+    "docker:reset": "docker-compose down && docker volume rm $(docker volume ls -q)"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}

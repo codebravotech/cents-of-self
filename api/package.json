@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "init_db": "npx prisma migrate dev --name init",
+    "dev": "yarn init_db && node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "6.5.0",
+    "prisma": "^6.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.13",
+    "tsx": "^4.19.3",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1"
+  }
+}

@@ -1,0 +1,38 @@
+services:
+  postgres-db:
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      # For production level code this would be moved to a .env.secret file
+      POSTGRES_PASSWORD: unsecret_password_for_demo
+      POSTGRES_DB: cents_of_self
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  api:
+    depends_on:
+      - postgres-db
+    image: node:20
+    working_dir: /usr/src/api
+    volumes:
+      - ./api:/usr/src/api
+    command: bash -c "yarn && yarn dev"
+    ports:
+      - "4000:4000"
+  app:
+    #   depends_on:
+    #     - postgres-db
+    #     - api
+    image: node:20
+    working_dir: /usr/src/app
+    volumes:
+      - ./app:/usr/src/app
+    command: bash -c "yarn && yarn dev"
+    ports:
+      - "5173:5173"
+
+volumes:
+  postgres: ~
