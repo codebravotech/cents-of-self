@@ -6,7 +6,7 @@ Cents of Self is a demo unified framework (front and back end running as part of
 
 - Node Package Manager (npx) -- [download link](https://docs.npmjs.com/cli/v8/commands/npx)
 - Node Version 20 or above -- [download link](https://nodejs.org/en/download)
-- Docker Desktop (includes Docker Compose and the Docker CLI) -- [download link](https://docs.docker.com/compose/install/#:~:text=The%20easiest%20and%20recommended%20way,CLI%20which%20are%20Compose%20prerequisites).
+- Docker Desktop (including the Docker-Compose and Docker CLIs) -- [download link](https://docs.docker.com/compose/install/#:~:text=The%20easiest%20and%20recommended%20way,CLI%20which%20are%20Compose%20prerequisites).
 - A supported development environment: currently support is only for a Linux-based system/terminal (application was developed on MacOS). Windows commands will differ (documentation/support coming soon), but as long as you can install the dependencies using your preferred package manager and run docker-compose, you should be able to run the application in Windows as well.
 
 The install scripts will set up all other dependencies.
@@ -18,6 +18,10 @@ The install scripts will set up all other dependencies.
 1. Launch Docker Desktop
 2. Run `yarn install_deps` from the project root directory (this is mostly just for dev tools like prettier, since the docker network will have the dependencies installed inside the containers themselves)
 3. Start the application: Run `yarn dev` from the project root directory.
+4. Allow the network to spin up -- all steps are complete when you see
+    - a message for the "api" service saying `🚀  GQL Server ready at localhost:4000`
+    AND 
+    - a message from the "app" service saying `Local:   http://localhost:5173/`
 4. Open localhost:5173 in a browser window
 
 ### Stop
