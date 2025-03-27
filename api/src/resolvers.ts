@@ -12,7 +12,7 @@ import {
 import { Transaction } from "../generated/prisma";
 
 const Query: QueryResolvers = {
-  // Get list of all transactions
+  // Get a list of all accounts ordered by id ascending (restrict account information to just id)
   accounts: async (_, input, context) => {
     const { prisma } = context;
     const results = await prisma.account.findMany({
@@ -23,6 +23,7 @@ const Query: QueryResolvers = {
     });
     return results;
   },
+  // Get a list of all transactions ordered by id ascending
   transactions: async (_, input, context) => {
     const { prisma } = context;
 
