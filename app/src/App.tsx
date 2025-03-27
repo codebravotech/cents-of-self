@@ -20,7 +20,7 @@ function App() {
   const { accounts } = useAccounts();
 
   return (
-    <div className="flex h-full min-h-[100vh] w-screen flex-col bg-[#267365] pb-10">
+    <div className="flex h-full min-h-[100vh] w-screen flex-col bg-[#0C4A35] pb-10">
       {!transactionsLoading && (
         <>
           <div className="m-5">
