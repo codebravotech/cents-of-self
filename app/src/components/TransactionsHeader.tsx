@@ -9,8 +9,8 @@ export default function TransactionsHeader() {
     >
       <div>Title</div>
       <div className="col-span-2">Description</div>
-      <div>To Account</div>
       <div>From Account</div>
+      <div>To Account</div>
       <div>Amount (USD)</div>
     </div>
   );

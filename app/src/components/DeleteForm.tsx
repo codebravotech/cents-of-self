@@ -40,7 +40,7 @@ export default function DeleteForm() {
   return (
     <div className="mb-4 flex h-full min-h-32 w-full flex-col items-center justify-between text-lg">
       <div>
-        Are you sure you want to delete transaction "{transaction.title}"?
+        Are you sure you want to delete transaction "{transaction.title}"? &nbsp;
         <i>(transaction ID: {transactionId})</i>
       </div>
       <div className="flex w-full justify-center gap-2">

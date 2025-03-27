@@ -23,8 +23,8 @@ export default function TransactionRow({
     >
       <div>{title}</div>
       <div className="col-span-2">{description}</div>
-      <div>{toAccount}</div>
       <div>{fromAccount}</div>
+      <div>{toAccount}</div>
       <div>{amount}</div>
 
       <div className="flex gap-10">
