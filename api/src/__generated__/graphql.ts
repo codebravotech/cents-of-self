@@ -18,6 +18,11 @@ export type Scalars = {
   DateTime: { input: any; output: any; }
 };
 
+export type Account = {
+  __typename?: 'Account';
+  id?: Maybe<Scalars['String']['output']>;
+};
+
 export type AddTransactionInput = {
   amount: Scalars['Int']['input'];
   description: Scalars['String']['input'];
@@ -51,6 +56,7 @@ export type MutationUpdateTransactionArgs = {
 
 export type Query = {
   __typename?: 'Query';
+  accounts?: Maybe<Array<Maybe<Account>>>;
   transactions?: Maybe<Array<Maybe<Transaction>>>;
 };
 
@@ -144,9 +150,10 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+  Account: ResolverTypeWrapper<Account>;
+  String: ResolverTypeWrapper<Scalars['String']['output']>;
   AddTransactionInput: AddTransactionInput;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
-  String: ResolverTypeWrapper<Scalars['String']['output']>;
   DateTime: ResolverTypeWrapper<Scalars['DateTime']['output']>;
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
@@ -157,15 +164,21 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+  Account: Account;
+  String: Scalars['String']['output'];
   AddTransactionInput: AddTransactionInput;
   Int: Scalars['Int']['output'];
-  String: Scalars['String']['output'];
   DateTime: Scalars['DateTime']['output'];
   Mutation: {};
   Query: {};
   Transaction: Transaction;
   UpdateTransactionInput: UpdateTransactionInput;
   Boolean: Scalars['Boolean']['output'];
+};
+
+export type AccountResolvers<ContextType = any, ParentType extends ResolversParentTypes['Account'] = ResolversParentTypes['Account']> = {
+  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
@@ -179,6 +192,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  accounts?: Resolver<Maybe<Array<Maybe<ResolversTypes['Account']>>>, ParentType, ContextType>;
   transactions?: Resolver<Maybe<Array<Maybe<ResolversTypes['Transaction']>>>, ParentType, ContextType>;
 };
 
@@ -194,6 +208,7 @@ export type TransactionResolvers<ContextType = any, ParentType extends Resolvers
 };
 
 export type Resolvers<ContextType = any> = {
+  Account?: AccountResolvers<ContextType>;
   DateTime?: GraphQLScalarType;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;

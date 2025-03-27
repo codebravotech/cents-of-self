@@ -4,6 +4,7 @@ import {
   UpdateTransactionInput,
 } from "../__generated__/graphql";
 
+// Build a mutation payload that will create/connect the Account record in the case that it does not exist, and connect it to the transaction being added/updated if it already does exist
 export const buildTransactionMutation = (
   transaction: AddTransactionInput | UpdateTransactionInput
 ) => {

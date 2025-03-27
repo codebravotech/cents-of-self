@@ -3,6 +3,9 @@ const { gql } = require("apollo-server");
 export default gql`
   scalar DateTime
 
+  type Account {
+    id: String
+  }
   type Transaction {
     id: Int
     title: String
@@ -32,6 +35,7 @@ export default gql`
   }
 
   type Query {
+    accounts: [Account]
     transactions: [Transaction]
   }
   type Mutation {

@@ -9,10 +9,30 @@ import {
   buildTransactionMutation,
   normalizeTransactionResult,
 } from "./utils/transaction";
+import { Transaction } from "../generated/prisma";
 
 const Query: QueryResolvers = {
   // Get list of all transactions
-  transactions: async (_, input, context) => [],
+  accounts: async (_, input, context) => {
+    const { prisma } = context;
+    const results = await prisma.account.findMany({
+      orderBy: { id: "asc" },
+      select: {
+        id: true,
+      },
+    });
+    return results;
+  },
+  transactions: async (_, input, context) => {
+    const { prisma } = context;
+
+    const results = await prisma.transaction.findMany({
+      orderBy: { id: "asc" },
+    });
+    return results.map((result: Transaction) =>
+      normalizeTransactionResult(result)
+    );
+  },
 };
 
 const Mutation: MutationResolvers = {
