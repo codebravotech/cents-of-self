@@ -18,7 +18,7 @@ The install scripts will set up all other dependencies.
 1. Launch Docker Desktop
 2. Run `yarn install_deps` from the project root directory (this is mostly just for dev tools like prettier, since the docker network will have the dependencies installed inside the containers themselves)
 3. Start the application: Run `yarn dev` from the project root directory.
-4. Allow the network to spin up -- this may take a few minutes because it has to download docker images for postgres and node, install dependencies, and kick off the services. All steps are complete when you see:
+4. Allow the network to spin up -- this may take a few minutes (go grab a coffee or do a short meditation 😉) because it has to download docker images for postgres and node, install dependencies, and kick off the services. All steps are complete when you see:
     - a message for the "api" service saying `🚀  GQL Server ready at http://localhost:4000`
     AND 
     - a message from the "app" service saying `Local:   http://localhost:5173/`
