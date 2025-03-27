@@ -4,7 +4,7 @@ import {
   MutationResolvers,
   QueryResolvers,
   UpdateTransactionInput,
-} from "./__generated__/graphql";
+} from "./types/__generated__/data/graphql";
 import {
   buildTransactionMutation,
   normalizeTransactionResult,

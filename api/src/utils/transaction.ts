@@ -2,7 +2,7 @@ import { Transaction } from "../../generated/prisma";
 import {
   AddTransactionInput,
   UpdateTransactionInput,
-} from "../__generated__/graphql";
+} from "../types/__generated__/data/graphql";
 
 // Build a mutation payload that will create/connect the Account record in the case that it does not exist, and connect it to the transaction being added/updated if it already does exist
 export const buildTransactionMutation = (
