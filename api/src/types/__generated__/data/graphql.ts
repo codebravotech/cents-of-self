@@ -24,7 +24,7 @@ export type Account = {
 };
 
 export type AddTransactionInput = {
-  amount: Scalars['Int']['input'];
+  amount: Scalars['Float']['input'];
   description: Scalars['String']['input'];
   fromAccount: Scalars['String']['input'];
   title?: InputMaybe<Scalars['String']['input']>;
@@ -62,7 +62,7 @@ export type Query = {
 
 export type Transaction = {
   __typename?: 'Transaction';
-  amount?: Maybe<Scalars['Int']['output']>;
+  amount?: Maybe<Scalars['Float']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   fromAccount?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Int']['output']>;
@@ -72,7 +72,7 @@ export type Transaction = {
 };
 
 export type UpdateTransactionInput = {
-  amount?: InputMaybe<Scalars['Int']['input']>;
+  amount?: InputMaybe<Scalars['Float']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   fromAccount?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
@@ -153,9 +153,10 @@ export type ResolversTypes = {
   Account: ResolverTypeWrapper<Account>;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
   AddTransactionInput: AddTransactionInput;
-  Int: ResolverTypeWrapper<Scalars['Int']['output']>;
+  Float: ResolverTypeWrapper<Scalars['Float']['output']>;
   DateTime: ResolverTypeWrapper<Scalars['DateTime']['output']>;
   Mutation: ResolverTypeWrapper<{}>;
+  Int: ResolverTypeWrapper<Scalars['Int']['output']>;
   Query: ResolverTypeWrapper<{}>;
   Transaction: ResolverTypeWrapper<Transaction>;
   UpdateTransactionInput: UpdateTransactionInput;
@@ -167,9 +168,10 @@ export type ResolversParentTypes = {
   Account: Account;
   String: Scalars['String']['output'];
   AddTransactionInput: AddTransactionInput;
-  Int: Scalars['Int']['output'];
+  Float: Scalars['Float']['output'];
   DateTime: Scalars['DateTime']['output'];
   Mutation: {};
+  Int: Scalars['Int']['output'];
   Query: {};
   Transaction: Transaction;
   UpdateTransactionInput: UpdateTransactionInput;
@@ -197,7 +199,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 };
 
 export type TransactionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Transaction'] = ResolversParentTypes['Transaction']> = {
-  amount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  amount?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   fromAccount?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;

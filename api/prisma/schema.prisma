@@ -20,7 +20,7 @@ model Transaction {
   id              Int     @id @default(autoincrement())
   title           String 
   description     String
-  amount          Int
+  amount          Float
   fromAccount     Account @relation(name: "FromAccountTransactions", fields: [fromAccountId], references: [id])
   fromAccountId   String
   toAccount       Account @relation(name: "ToAccountTransactions", fields: [toAccountId], references: [id])

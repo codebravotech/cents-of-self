@@ -9,24 +9,34 @@ Cents of Self is a demo unified framework (front and back end running as part of
 - Docker Desktop (includes Docker Compose and the Docker CLI) -- [download link](https://docs.docker.com/compose/install/#:~:text=The%20easiest%20and%20recommended%20way,CLI%20which%20are%20Compose%20prerequisites).
 - A supported development environment: currently support is only for a Linux-based system/terminal (application was developed on MacOS). Windows commands will differ (documentation/support coming soon), but as long as you can install the dependencies using your preferred package manager and run docker-compose, you should be able to run the application in Windows as well.
 
-The install scripts should set up all other dependencies (e.g. typscript, etc)
+The install scripts will set up all other dependencies.
 
 ## Run Locally
 
-1. Launch Docker Desktop
-2. Run the docker-compose network: Run `docker-compose up` from the project root directory. (This will install all deps inside the service containers)
-3. Open localhost:5173 in a browser window
+### Start
 
-## Key Technologies Used
+1. Launch Docker Desktop
+2. Run `yarn install_deps` from the project root directory (this is mostly just for dev tools like prettier, since the docker network will have the dependencies installed inside the containers themselves)
+3. Start the application: Run `yarn dev` from the project root directory.
+4. Open localhost:5173 in a browser window
+
+### Stop
+
+To shut down the application, run `docker-compose down`
+
+To shut down the application and reset the database, run `yarn docker:reset`. NOTE: THIS REMOVES ALL DOCKER VOLUMES FROM YOUR MACHINE, SO USE CAREFULLY.
+
+## Key Technologies
 
 To develop against this codebase you should have a working knowledge of:
 
 #### Back End
 
 - GraphQL
-- Node
+- Node (Typescript)
+- Prisma
 
 #### Front End
 
-- React (Typescript, hooks-based approach from React 16+)
+- React (Typescript & hooks-based approach from React 16+)
 - TailwindCSS

@@ -11,13 +11,14 @@ export default function TransactionRow({
 }: {
   transaction: Transaction;
 }) {
-  const { title, description, toAccount, fromAccount, amount } = transaction;
-  const { appMode, setAppMode } = useSystemStore();
+  const { id, title, description, toAccount, fromAccount, amount } =
+    transaction;
+  const { setAppMode, setTransactionId } = useSystemStore();
 
   return (
     <div
       className={cx(
-        "grid w-full grid-cols-7 gap-2 rounded-lg bg-[#F2F2F2] px-4 py-2",
+        "flex w-full grid-cols-7 flex-col items-center gap-2 rounded-lg bg-[#F2F2F2] px-4 py-2 lg:grid",
       )}
     >
       <div>{title}</div>
@@ -31,6 +32,7 @@ export default function TransactionRow({
           src={updateIcon}
           alt="Update Transaction"
           onClick={() => {
+            setTransactionId(id || null);
             setAppMode("update_transaction");
           }}
         />
@@ -38,6 +40,7 @@ export default function TransactionRow({
           src={deleteIcon}
           alt="Delete Transaction"
           onClick={() => {
+            setTransactionId(id || null);
             setAppMode("delete_transaction");
           }}
         />

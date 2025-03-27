@@ -30,7 +30,7 @@ export const ADD_TRANSACTION = gql`
 
 export const UPDATE_TRANSACTION = gql`
   mutation UpdateTransaction($id: Int!, $transaction: UpdateTransactionInput!) {
-    updateTransaction(id: $updateTransactionId, transaction: $transaction) {
+    updateTransaction(id: $id, transaction: $transaction) {
       id
       title
       description
@@ -43,7 +43,7 @@ export const UPDATE_TRANSACTION = gql`
 `;
 
 export const DELETE_TRANSACTION = gql`
-  mutation DeleteTransaction($deleteTransactionId: Int!) {
-    deleteTransaction(id: $deleteTransactionId)
+  mutation DeleteTransaction($id: Int!) {
+    deleteTransaction(id: $id)
   }
 `;

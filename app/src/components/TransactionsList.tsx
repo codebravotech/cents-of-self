@@ -13,7 +13,10 @@ export default function TransactionsList({
     <div className={cx("flex w-full flex-col items-center gap-2")}>
       <TransactionsHeader />
       {transactions.map((transaction) => (
-        <TransactionRow transaction={transaction} />
+        <TransactionRow
+          key={`transaction_row_${transaction.id}`}
+          transaction={transaction}
+        />
       ))}
     </div>
   );

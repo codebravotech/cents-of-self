@@ -10,7 +10,7 @@ export default gql`
     id: Int
     title: String
     description: String
-    amount: Int
+    amount: Float
     fromAccount: String
     toAccount: String
     transactionDate: DateTime
@@ -20,7 +20,7 @@ export default gql`
   input AddTransactionInput {
     description: String!
     title: String
-    amount: Int!
+    amount: Float!
     fromAccount: String!
     toAccount: String!
   }
@@ -29,7 +29,7 @@ export default gql`
   input UpdateTransactionInput {
     title: String
     description: String
-    amount: Int
+    amount: Float
     fromAccount: String
     toAccount: String
   }

@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import cx from "classnames";
+import { ReactNode } from "react";
 
 export default function Button({
   children,
@@ -7,14 +7,14 @@ export default function Button({
   className,
 }: {
   children: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
 }) {
   return (
     <button
       className={cx(
         className,
-        "bg-black text-[#F2F2F2] px-5 py-4 rounded-full hover:opacity-70 cursor-pointer"
+        "cursor-pointer rounded-full bg-black px-5 py-4 text-[#F2F2F2] hover:opacity-70",
       )}
       onClick={onClick}
     >
