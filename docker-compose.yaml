@@ -23,9 +23,9 @@ services:
     ports:
       - "4000:4000"
   app:
-    #   depends_on:
-    #     - postgres-db
-    #     - api
+    depends_on:
+      - postgres-db
+      - api
     image: node:20
     working_dir: /usr/src/app
     volumes:

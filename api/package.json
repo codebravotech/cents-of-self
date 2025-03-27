@@ -1,10 +1,11 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "main.ts",
   "scripts": {
     "init_db": "npx prisma migrate dev --name init",
-    "dev": "yarn init_db && node main.js"
+    "codegen": "graphql-codegen",
+    "dev": "yarn init_db && graphql-codegen && nodemon main.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,12 +13,23 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "6.5.0",
+    "@types/graphql-iso-date": "^3.4.3",
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.10.0",
+    "graphql-iso-date": "^3.6.1",
+    "nodemon": "^3.1.9",
     "prisma": "^6.5.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/client-preset": "^4.7.0",
+    "@graphql-codegen/typescript": "^4.1.5",
+    "@graphql-codegen/typescript-resolvers": "^4.4.4",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@types/node": "^22.13.13",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
-    "typescript": "~5.7.2",
+    "typescript": "^5.8.2",
     "typescript-eslint": "^8.24.1"
   }
 }

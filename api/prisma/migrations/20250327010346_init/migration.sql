@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "Account" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL DEFAULT '',
 
     CONSTRAINT "Account_pkey" PRIMARY KEY ("id")
 );
@@ -8,11 +8,12 @@ CREATE TABLE "Account" (
 -- CreateTable
 CREATE TABLE "Transaction" (
     "id" SERIAL NOT NULL,
+    "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "amount" INTEGER NOT NULL,
     "fromAccountId" TEXT NOT NULL,
     "toAccountId" TEXT NOT NULL,
-    "transactionDate" INTEGER NOT NULL,
+    "transactionDate" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Transaction_pkey" PRIMARY KEY ("id")
 );

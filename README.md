@@ -14,9 +14,8 @@ The install scripts should set up all other dependencies (e.g. typscript, etc)
 ## Run Locally
 
 1. Launch Docker Desktop
-2. Install all dependencies for framework: Run `yarn install_deps` from the project root directory.
-3. Run the docker-compose network: Run `docker-compose up` from the project root directory.
-4. Open localhost:5173 in a browser window
+2. Run the docker-compose network: Run `docker-compose up` from the project root directory. (This will install all deps inside the service containers)
+3. Open localhost:5173 in a browser window
 
 ## Key Technologies Used
 
